@@ -17,6 +17,7 @@
             <th class="col-form-label text-warning">Name</th>
             <th class="col-form-label text-warning">Price</th>
             <th class="col-form-label text-warning">Category</th>
+            <th class="col-form-label text-warning ">Action</th>
 
             </thead>
             <tbody class="text-light">
@@ -26,6 +27,11 @@
                     <td>[[${product.name}]]</td>
                     <td>[[${product.price}]]</td>
                     <td>[[${product.category.name}]]</td>
+                    <td><a th:href="@{'/products/edit/' + ${product.id}}"
+                           class="btn btn-secondary text-warning"> Edit </a>
+                        <a th:href="@{'//' + ${product.id}}"
+                           class="btn btn-danger"> Delete </a>
+                    </td>
 
                 </tr>
             </th:block>
