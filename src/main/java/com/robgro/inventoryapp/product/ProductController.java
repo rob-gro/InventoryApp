@@ -2,7 +2,6 @@ package com.robgro.inventoryapp.product;
 
 import com.robgro.inventoryapp.category.Category;
 import com.robgro.inventoryapp.category.CategoryRepository;
-import org.hibernate.cache.spi.access.CachedDomainDataAccess;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -53,5 +52,11 @@ public class ProductController {
         model.addAttribute("listCategories", listCategories);
 
         return "product_form";
+    }
+
+    @GetMapping("/products/delete/{id}")
+    public String deleteProduct(@PathVariable("id") Integer id, Model model) {
+        productRepository.deleteById(id);
+        return "redirect:/products";
     }
 }
