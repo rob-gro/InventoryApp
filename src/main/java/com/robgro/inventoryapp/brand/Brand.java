@@ -1,11 +1,13 @@
-package com.robgro.inventoryapp.category;
+package com.robgro.inventoryapp.brand;
 
-import com.robgro.inventoryapp.brand.Brand;
+import com.robgro.inventoryapp.category.Category;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-public class Category {
+public class Brand {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,21 +16,8 @@ public class Category {
     @Column(name = "name", length = 45, nullable = false, unique = true)
     private String name;
 
-    @ManyToOne
-    @JoinColumn(name = "brand_id")
-    private Brand brand;
-
-    public Category(Integer id) {
-        this.id = id;
-    }
-
-    public Category(String name) {
-        this.name = name;
-    }
-
-    public Category() {
-
-    }
+    @OneToMany(mappedBy = "brand")
+    private List<Category> categories = new ArrayList<>();
 
     public Integer getId() {
         return id;
@@ -46,11 +35,11 @@ public class Category {
         this.name = name;
     }
 
-    public Brand getBrand() {
-        return brand;
+    public List<Category> getCategories() {
+        return categories;
     }
 
-    public void setBrand(Brand brand) {
-        this.brand = brand;
+    public void setCategories(List<Category> categories) {
+        this.categories = categories;
     }
 }
