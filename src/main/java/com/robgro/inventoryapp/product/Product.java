@@ -3,6 +3,8 @@ package com.robgro.inventoryapp.product;
 import com.robgro.inventoryapp.category.Category;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Product {
@@ -20,6 +22,14 @@ public class Product {
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
+
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+    private List<ProductDetails> details = new ArrayList<>();
+
+    public void addDetail(String name, String value) {
+        this.details.add(new ProductDetails(name, value, this));
+//        this.details.add(new ProductDetails(name, value, this));
+    }
 
     public Integer getId() {
         return id;
