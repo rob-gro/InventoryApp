@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <!--    added bootstrap  -->
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" type="text/css"/>
+
+    <title>List of cbrands</title>
+</head>
+<body class="bg-dark">
+<div class="container my-3 ">
+    <div><h1 class="text-secondary">Brands list</h1></div>
+    <div>
+        <table class="table table-bordered text-center table-dark table-striped">
+            <thead class="thead-dark">
+            <th class="col-form-label text-warning">Id</th>
+            <th class="col-form-label text-warning">Name</th>
+            <th class="col-form-label text-warning">Categories</th>
+            <th class="col-form-label text-warning ">Action</th>
+            </thead>
+            <tbody class="text-light">
+            <th:block th:each="brand : ${brandList}">
+                <tr>
+                    <td>[[${brand.id}]]</td>
+                    <td>[[${brand.name}]]</td>
+                    <td>[[${brand.categories}]]</td>
+                    <td>
+                        <a th:href="@{'/brands/edit/' + ${brand.id}}"
+                           class="btn btn-secondary text-warning"> Edit </a>
+                    </td>
+                </tr>
+            </th:block>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
