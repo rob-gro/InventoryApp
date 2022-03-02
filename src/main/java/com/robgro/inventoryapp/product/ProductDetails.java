@@ -20,6 +20,13 @@ public class ProductDetails {
     @Column(name = "value", length = 45, nullable = false)
     private String value;
 
+    public ProductDetails(Integer id, String name, String value, Product product) {
+        this.id = id;
+        this.name = name;
+        this.value = value;
+        this.product = product;
+
+    }
 
     public ProductDetails(String name, String value, Product product) {
         this.product = product;
@@ -54,4 +61,10 @@ public class ProductDetails {
     public void setValue(String value) {
         this.value = value;
     }
-}
+
+    @Override
+    public String toString() {
+        return name + "=" + value;
+    }
+
+    }

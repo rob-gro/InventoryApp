@@ -28,7 +28,10 @@ public class Product {
 
     public void addDetail(String name, String value) {
         this.details.add(new ProductDetails(name, value, this));
-//        this.details.add(new ProductDetails(name, value, this));
+    }
+
+    public void setDetails(Integer id, String name, String value) {
+        this.details.add(new ProductDetails(id, name, value, this));
     }
 
     public Integer getId() {
@@ -61,5 +64,13 @@ public class Product {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public List<ProductDetails> getDetails() {
+        return details;
+    }
+
+    public void setDetails(List<ProductDetails> details) {
+        this.details = details;
     }
 }
