@@ -2,7 +2,6 @@ package com.robgro.inventoryapp.brand;
 
 import com.robgro.inventoryapp.category.Category;
 import com.robgro.inventoryapp.category.CategoryRepository;
-import com.robgro.inventoryapp.product.Product;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,8 +13,8 @@ import java.util.List;
 @Controller
 public class BrandController {
 
-    private BrandRepository brandRepository;
-    private CategoryRepository categoryRepository;
+    private final BrandRepository brandRepository;
+    private final CategoryRepository categoryRepository;
 
     public BrandController(BrandRepository brandRepository, CategoryRepository categoryRepository) {
         this.brandRepository = brandRepository;
