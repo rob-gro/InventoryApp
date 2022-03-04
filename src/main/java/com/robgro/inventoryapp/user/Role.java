@@ -1,6 +1,7 @@
 package com.robgro.inventoryapp.user;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 public class Role {
@@ -24,6 +25,10 @@ public class Role {
         this.name = name;
     }
 
+    public Role(Integer id) {
+        this.id = id;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -38,5 +43,25 @@ public class Role {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+
+        Role role = (Role) obj;
+
+        return Objects.equals(id, role.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return id != null ? id.hashCode() : 0;
+    }
+
+    @Override
+    public String toString() {
+        return this.name;
     }
 }

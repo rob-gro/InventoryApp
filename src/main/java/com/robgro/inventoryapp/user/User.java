@@ -18,13 +18,17 @@ public class User {
     @Column(name = "password",length = 45, nullable = false, unique = true)
     private String password;
 
-    @ManyToMany
+    @ManyToMany     //(cascade = CascadeType.PERSIST) <-- needed at tests to add new user and new role
     @JoinTable(
             name = "user_role",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
     private Set<Role> roles = new HashSet<>();
+
+    /**
+     Constructors
+     */
 
     public User(String email, String password) {
         this.email = email;
@@ -34,9 +38,21 @@ public class User {
     public User() {
     }
 
+    /**
+    Methods
+     */
+
     public void addRole(Role role) {
         this.roles.add(role);
     }
+
+    public void removeRole(Role role) {
+        this.roles.remove(role);
+    }
+
+    /**
+    Getters & Setters
+     */
 
     public Integer getId() {
         return id;
