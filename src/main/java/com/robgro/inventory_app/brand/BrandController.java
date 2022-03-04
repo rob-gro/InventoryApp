@@ -1,7 +1,7 @@
-package com.robgro.inventoryapp.brand;
+package com.robgro.inventory_app.brand;
 
-import com.robgro.inventoryapp.category.Category;
-import com.robgro.inventoryapp.category.CategoryRepository;
+import com.robgro.inventory_app.category.Category;
+import com.robgro.inventory_app.category.CategoryRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

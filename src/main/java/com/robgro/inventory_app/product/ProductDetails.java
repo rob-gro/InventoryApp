@@ -1,4 +1,4 @@
-package com.robgro.inventoryapp.product;
+package com.robgro.inventory_app.product;
 
 import javax.persistence.*;
 

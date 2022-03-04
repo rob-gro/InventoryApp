@@ -1,4 +1,4 @@
-package com.robgro.inventoryapp.user;
+package com.robgro.inventory_app.user;
 
 import javax.persistence.*;
 import java.util.HashSet;

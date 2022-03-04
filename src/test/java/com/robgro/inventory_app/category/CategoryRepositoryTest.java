@@ -1,4 +1,4 @@
-package com.robgro.inventoryapp.category;
+package com.robgro.inventory_app.category;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

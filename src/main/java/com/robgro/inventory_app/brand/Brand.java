@@ -1,6 +1,6 @@
-package com.robgro.inventoryapp.brand;
+package com.robgro.inventory_app.brand;
 
-import com.robgro.inventoryapp.category.Category;
+import com.robgro.inventory_app.category.Category;
 
 import javax.persistence.*;
 import java.util.ArrayList;

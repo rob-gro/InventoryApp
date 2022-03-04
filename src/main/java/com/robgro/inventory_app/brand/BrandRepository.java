@@ -1,4 +1,4 @@
-package com.robgro.inventoryapp.brand;
+package com.robgro.inventory_app.brand;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

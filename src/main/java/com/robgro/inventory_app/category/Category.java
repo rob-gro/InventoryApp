@@ -1,6 +1,6 @@
-package com.robgro.inventoryapp.category;
+package com.robgro.inventory_app.category;
 
-import com.robgro.inventoryapp.brand.Brand;
+import com.robgro.inventory_app.brand.Brand;
 
 import javax.persistence.*;
 
