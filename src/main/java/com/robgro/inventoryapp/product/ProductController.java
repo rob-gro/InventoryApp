@@ -33,9 +33,9 @@ public class ProductController {
 
     @PostMapping("/products/save")
     public String saveProduct(Product product, HttpServletRequest request) {
-        String [] detailIDs = request.getParameterValues("detailID");
-        String [] detailNames = request.getParameterValues("detailName");
-        String [] detailValues = request.getParameterValues("detailValue");
+        String[] detailIDs = request.getParameterValues("detailID");
+        String[] detailNames = request.getParameterValues("detailName");
+        String[] detailValues = request.getParameterValues("detailValue");
 
         for (int i = 0; i < detailNames.length; i++) {
             if (detailIDs != null && detailIDs.length > 0) {
@@ -56,7 +56,7 @@ public class ProductController {
     }
 
     @GetMapping("/products/edit/{id}")
-    public String showEditProductForm (@PathVariable("id") Integer id, Model model) {
+    public String showEditProductForm(@PathVariable("id") Integer id, Model model) {
         Product product = productRepository.findById(id).get();
         model.addAttribute("product", product);
 
@@ -67,7 +67,7 @@ public class ProductController {
     }
 
     @GetMapping("/products/delete/{id}")
-    public String deleteProduct(@PathVariable("id") Integer id, Model model) {
+    public String deleteProduct(@PathVariable("id") Integer id) {
         productRepository.deleteById(id);
         return "redirect:/products";
     }

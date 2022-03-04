@@ -9,7 +9,7 @@
 </head>
 <body class="bg-dark">
 <div class="bg-dark container-fluid text-center">
-    <div><h1 class="text-secondary">Welcome to inventory app</h1></div>
+    <div><h1 class="text-secondary m-3">Welcome to inventory app</h1></div>
 
     <div class="p-3">
         <a class="h2 text-warning" th:href="@{/categories}">Categories List</a>
@@ -30,6 +30,17 @@
     </div>
     <div class="p-3">
         <a class="h2 text-primary" th:href="@{/brands/new}">Create New Brand</a>
+    </div>
+<hr>
+
+    <div><h1 class="text-secondary m-3">Welcome to Users part</h1></div>
+
+
+    <div class="p-3">
+        <a class="h2 text-warning" th:href="@{/users}">Users List</a>
+    </div>
+    <div class="p-3">
+        <a class="h2 text-primary" th:href="@{/users/new}">Create New User</a>
     </div>
 </div>
 </body>
