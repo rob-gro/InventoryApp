@@ -12,10 +12,10 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "email",length = 45, nullable = false, unique = true)
+    @Column(name = "email", length = 45, nullable = false, unique = true)
     private String email;
 
-    @Column(name = "password",length = 45, nullable = false, unique = true)
+    @Column(name = "password", length = 45, nullable = false, unique = true)
     private String password;
 
     @ManyToMany     //(cascade = CascadeType.PERSIST) <-- needed at tests to add new user and new role
@@ -27,7 +27,7 @@ public class User {
     private Set<Role> roles = new HashSet<>();
 
     /**
-     Constructors
+     * Constructors
      */
 
     public User(String email, String password) {
@@ -35,11 +35,15 @@ public class User {
         this.password = password;
     }
 
+    public User(Integer id) {
+        this.id = id;
+    }
+
     public User() {
     }
 
     /**
-    Methods
+     * Methods
      */
 
     public void addRole(Role role) {
@@ -50,8 +54,15 @@ public class User {
         this.roles.remove(role);
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "email='" + email + '\'' +
+                '}';
+    }
+
     /**
-    Getters & Setters
+     * Getters & Setters
      */
 
     public Integer getId() {

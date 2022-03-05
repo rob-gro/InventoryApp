@@ -26,12 +26,26 @@ public class Product {
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
     private List<ProductDetails> details = new ArrayList<>();
 
+    public Product() {
+    }
+
+    public Product(Integer id) {
+        this.id = id;
+    }
+
     public void addDetail(String name, String value) {
         this.details.add(new ProductDetails(name, value, this));
     }
 
     public void setDetails(Integer id, String name, String value) {
         this.details.add(new ProductDetails(id, name, value, this));
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "name='" + name + '\'' +
+                '}';
     }
 
     public Integer getId() {

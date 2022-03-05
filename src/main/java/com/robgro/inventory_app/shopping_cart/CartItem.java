@@ -39,6 +39,16 @@ public class CartItem {
         this.user = user;
     }
 
+    @Override
+    public String toString() {
+        return "CartItem{" +
+                "id=" + id +
+                ", quantity=" + quantity +
+                ", product=" + product +
+                ", user=" + user +
+                '}';
+    }
+
     public Integer getId() {
         return id;
     }
