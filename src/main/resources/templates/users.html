@@ -14,8 +14,7 @@
     <div>
         <a th:href="@{/users/new}"
            class="btn btn-outline-warning">Create New User</a>
-    </div>
-    &nbsp;
+    </div>    &nbsp;
 
     <div>
         <table class="table table-bordered text-center table-dark table-striped">
@@ -25,8 +24,8 @@
             <th class="col-form-label text-warning">Roles</th>
             <th class="col-form-label text-warning ">Action</th>
 
-
             </thead>
+
             <tbody class="text-light">
             <th:block th:each="user : ${listUsers}">
                 <tr>

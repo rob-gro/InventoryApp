@@ -14,8 +14,11 @@
 
     <form th:action="@{/brands/save}" th:object="${brand}" method="post"
           style="max-width: 600px; margin: 0 auto;">
+
         <input type="hidden" th:field="*{id}" th:value="${brand.id}"/>
+
         <div class="m-4">
+            
             <div class="form-group row">
                 <label class="col-form-label col-sm-3 text-warning">Brand name: </label>
                    <div class="col-sm-8">
