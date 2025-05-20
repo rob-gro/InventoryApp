@@ -12,9 +12,6 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "username",length = 45, nullable = false, unique = true)
-    private String username;
-
     @Column(name = "email",length = 45, nullable = false, unique = true)
     private String email;
 
@@ -51,14 +48,6 @@ public class User {
 
     public void removeRole(Role role) {
         this.roles.remove(role);
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
     }
 
     /**
